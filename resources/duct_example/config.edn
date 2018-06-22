@@ -1,0 +1,14 @@
+{:duct.core/project-ns  duct-example
+ :duct.core/environment :production
+
+ :duct.module/logging {}
+ :duct.module.web/api {}
+
+ :duct.router/cascading
+ [#ig/ref :duct-example.handler/example]
+
+ :duct.database.redis/carmine
+ {:spec {:host "127.0.0.1", :port 6379}}
+
+ :duct-example.handler/example
+ {:redis #ig/ref :duct.database.redis/carmine}}
